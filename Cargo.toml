@@ -1,0 +1,37 @@
+[package]
+authors = ["pjmp"]
+categories = ["command-line-utilities"]
+description = """
+Highly readable supplement to man pages.
+Shows simple, concise examples for commands.
+"""
+edition = "2021"
+homepage = "https://github.com/pombadev/bropages"
+keywords = ["bro", "bropages", "tldr", "cheatsheet"]
+license = "MIT"
+name = "bropages"
+readme = "README.md"
+repository = "https://github.com/pombadev/bropages"
+resolver = "2"
+version = "1.40.1"
+
+[dependencies]
+bat = {version = "0.22.1", default-features = false, features = ["paging", "regex-onig"]}
+clap = {version = "4.0.29", default-features = false, features = [
+    "error-context",
+    "help",
+    "std",
+    "suggestions",
+    "usage",
+]}
+ureq = {version = "2.5.0", default-features = false, features = ["json"]}
+
+[[bin]]
+name = "bro"
+path = "src/main.rs"
+
+[profile.release]
+lto = true
+opt-level = 3
+panic = 'abort'
+strip = true
