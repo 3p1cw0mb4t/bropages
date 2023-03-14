@@ -57,6 +57,25 @@ OPTIONS:
             Print version information
 ```
 
+### Docker
+bropages client can be called from within a Docker container. Currently the container must be built on your own:
+```
+
+```
+After this, you can call the client like this
+```
+docker run --rm -it bropages less-wrap.sh curl # pipes the output to less with color support and automatic exit if lines do not exceed terminal screen
+
+docker run --rm -it bropages bro curl # directly calls bro client without wrapper
+
+```
+
+You might want to add an alias to your ~/.bashrc
+```
+alias bro='docker run --rm -it bropages less-wrap.sh'
+```
+
+
 ### Note
 
 - This is an unofficial rust port of [ruby bropages](https://rubygems.org/gems/bropages).
