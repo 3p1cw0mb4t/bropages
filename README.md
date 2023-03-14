@@ -60,7 +60,8 @@ OPTIONS:
 ### Docker
 bropages client can be called from within a Docker container. Currently the container must be built on your own:
 ```
-
+cd ./docker
+docker build . -t bropages
 ```
 After this, you can call the client like this
 ```
