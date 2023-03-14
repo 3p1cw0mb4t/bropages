@@ -1,0 +1,18 @@
+diff --git a/src/bro.rs b/src/bro.rs
+index 05da550..0f3ba4d 100644
+--- a/src/bro.rs
++++ b/src/bro.rs
+@@ -213,11 +213,7 @@ impl Cli {
+     }
+ 
+     fn print(&self, snippet: &[u8]) {
+-        let paging = if self.no_paging {
+-            PagingMode::Never
+-        } else {
+-            PagingMode::QuitIfOneScreen
+-        };
++        let paging = PagingMode::Never;
+ 
+         let displayed = PrettyPrinter::new()
+             .input_from_bytes(snippet)
+
